@@ -5,9 +5,21 @@ import ToolingIcon from "./icons/IconTooling.vue";
 import EcosystemIcon from "./icons/IconEcosystem.vue";
 import CommunityIcon from "./icons/IconCommunity.vue";
 import SupportIcon from "./icons/IconSupport.vue";
+import { ref } from "vue";
+import { ElButton } from "element-plus";
+let dialogVisible = ref(false);
+
+const showDialog = () => {
+  dialogVisible.value = true;
+};
 </script>
 
 <template>
+  <el-button>按钮</el-button>
+  <el-button type="primary" @click="showDialog">点击展示弹框</el-button>
+  <!-- <el-dialog v-model="dialogVisible" title="Tips" width="30%">
+    <span>This is a message</span>
+  </el-dialog> -->
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
